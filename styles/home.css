@@ -256,11 +256,12 @@ padding-bottom: 20px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-.footer-text{
     color: #fff;
 }
-.footer-date{
+#currentyear{
+    color: #fff;
+}
+#lastModified{
     color: #e97510;
 }
 @media screen and (max-width: 768px) {
