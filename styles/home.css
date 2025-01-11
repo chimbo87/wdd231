@@ -160,7 +160,7 @@ body {
   background-color: #07335a;
   border-radius: 4px 4px 0px 0px;
 }
-.banner-card-headtext p {
+.banner-card-headtext h2 {
   color: #fff;
   font-weight: 700;
 }
@@ -184,7 +184,7 @@ padding-bottom: 20px;
   background-color: #07335a;
   border-radius: 4px 4px 0px 0px;
 }
-.home-about-headtext p {
+.home-about-headtext h2 {
   color: #fff;
   font-weight: 700;
 }
@@ -203,6 +203,10 @@ padding-bottom: 20px;
   background-color: #181717;
   color: #fff;
   margin: 0px 15px;
+  cursor: pointer;
+}
+.home-about-btns button:hover{
+    opacity: 0.8;
 }
 .home-about-content {
   display: grid;
@@ -219,6 +223,7 @@ padding-bottom: 20px;
   border-radius: 5px;
   border: 1px solid #9e9d9d;
   font-weight: 700;
+ 
 }
 .about-content-brown {
   background-color: #762828;
@@ -226,8 +231,24 @@ padding-bottom: 20px;
   color: #fff;
   font-weight: 700;
 }
+.about-content-brown {
+    background-color: #8B4513;
+    color: white;
+}
 
-.footer-section{
+.credit-total {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.home-about-content button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#footer-section{
     background-color: #07335a;
     padding: 50px 0px;
     margin-top: 20px;
