@@ -1,0 +1,67 @@
+{
+    "members": [
+      {
+        "name": "Desert Oasis Hotel",
+        "address": "15 Avenue du Commerce, Timbuktu",
+        "phone": "(223) 555-0123",
+        "website": "https://desertoasishotel.com",
+        "image": "hotel.jpeg",
+        "membershipLevel": 3,
+        "description": "Luxury accommodation in the heart of Timbuktu"
+      },
+      {
+        "name": "Sahara Trading Co.",
+        "address": "45 Rue du Marché, Timbuktu",
+        "phone": "(223) 555-0124",
+        "website": "https://saharatrading.com",
+        "image": "imports.jpeg",
+        "membershipLevel": 3,
+        "description": "Import/Export specialists for local artisan goods"
+      },
+      {
+        "name": "Timbuktu Tours",
+        "address": "78 Boulevard des Guides, Timbuktu",
+        "phone": "(223) 555-0125",
+        "website": "https://timbuktutours.com",
+        "image": "tours.jpeg",
+        "membershipLevel": 2,
+        "description": "Expert guided tours of historical sites"
+      },
+      {
+        "name": "Desert Rose Café",
+        "address": "23 Place de la Paix, Timbuktu",
+        "phone": "(223) 555-0126",
+        "website": "https://desertrosecafe.com",
+        "image": "cafe.jpeg",
+        "membershipLevel": 1,
+        "description": "Traditional Malian cuisine and coffee"
+      },
+      {
+        "name": "Manuscripts & More",
+        "address": "56 Rue des Savants, Timbuktu",
+        "phone": "(223) 555-0127",
+        "website": "https://manuscriptsmore.com",
+        "image": "manuscripts.jpeg",
+        "membershipLevel": 2,
+        "description": "Historical manuscript preservation and tours"
+      },
+      {
+        "name": "Sahel Solar Solutions",
+        "address": "89 Avenue de l'Energie, Timbuktu",
+        "phone": "(223) 555-0128",
+        "website": "https://sahelsolar.com",
+        "image": "solars.jpeg",
+        "membershipLevel": 3,
+        "description": "Renewable energy solutions for businesses"
+      },
+      {
+        "name": "Timbuktu Textiles",
+        "address": "34 Rue des Artisans, Timbuktu",
+        "phone": "(223) 555-0129",
+        "website": "https://timbuktutextiles.com",
+        "image": "textiles.jpeg",
+        "membershipLevel": 2,
+        "description": "Traditional Mali fabrics and modern designs"
+      }
+    ]
+  }
