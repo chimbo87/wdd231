@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Directory - Timbuktu Chamber of Commerce</title>
+    <meta
+      name="description"
+      content="Explore local businesses in Timbuktu. Find contact information, locations, and services offered by our chamber members."
+    />
+    <meta name="author" content="Archford Nhanga" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/facebook-logo.png" href="favicon.ico" />
+
+    <!-- Facebook Open Graph meta tags -->
+    <meta
+      property="og:title"
+      content="Timbuktu Chamber of Commerce Business Directory"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/facebook-logo.png" />
+    <meta
+      property="og:url"
+      content="https://chimbo87.github.io/wdd231/chamber/directory.html"
+    />
+
+    <link rel="stylesheet" href="styles/base.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <img src="images/team.png" alt="Timbuktu Chamber Logo" />
+          <h1>Timbuktu Chamber</h1>
+        </div>
+        <nav>
+          <button id="menu-button" aria-label="Menu">☰</button>
+          <ul id="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="join.html">Join</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <header>
+      <div class="banner">
+        <img src="./images/hotel.jpeg" alt="Hero Image" />
+        <button class="cta-button">Keynote Tickets</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="events">
+        <div class="event-card large">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo
+            doloremque soluta tempora voluptates voluptatibus, corporis nihil
+            sapiente facere. Ex facere magni deserunt omnis? Id eius
+            accusantium, iure cumque qui harum.
+          </p>
+        </div>
+        <div class="event-card">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo
+            doloremque soluta tempora voluptates voluptatibus, corporis nihil
+            sapiente facere. Ex facere magni deserunt omnis? Id eius
+            accusantium, iure cumque qui harum.
+          </p>
+        </div>
+        <div class="event-card">
+          <p>
+            ARCHFORD Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Illo doloremque soluta tempora voluptates voluptatibus, corporis
+            nihil sapiente facere. Ex facere magni deserunt omnis? Id eius
+            accusantium, iure cumque qui harum.
+          </p>
+        </div>
+      </section>
+
+    
+
+      <section class="business-cards">
+        <div class="business-card">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo
+            doloremque soluta tempora voluptates voluptatibus, corporis nihil
+            sapiente facere. Ex facere magni deserunt omnis? Id eius
+            accusantium, iure cumque qui harum.
+          </p>
+        </div>
+        <div class="business-card">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo
+            doloremque soluta tempora voluptates voluptatibus, corporis nihil
+            sapiente facere. Ex facere magni deserunt omnis? Id eius
+            accusantium, iure cumque qui harum.
+          </p>
+        </div>
+        <div class="business-card">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo
+            doloremque soluta tempora voluptates voluptatibus, corporis nihil
+            sapiente facere. Ex facere magni deserunt omnis? Id eius
+            accusantium, iure cumque qui harum.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="contact-info">
+          <h2>Contact Information</h2>
+          <p>10 Rue De La Paix</p>
+          <p>Timbuktu, Mali 999</p>
+          <p>info@timbuktuchamber.org</p>
+          <p>(223) 555-2300</p>
+        </div>
+        <div class="social-links">
+          <a href="#" aria-label="YouTube"
+            ><img src="images/youtube.png" alt="YouTube"
+          /></a>
+          <a href="#" aria-label="Twitter"
+            ><img src="images/twitter.png" alt="Twitter"
+          /></a>
+          <a href="#" aria-label="LinkedIn"
+            ><img src="images/linkedin.png" alt="LinkedIn"
+          /></a>
+        </div>
+      </div>
+      <div class="footer-base">
+        <p>
+          &copy; <span id="currentYear"></span> Timbuktu Chamber | Archford
+          Nhanga | WDD 231
+        </p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+      </div>
+    </footer>
+
+    <script>
+      // Update copyright year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+      // Update last modified date
+      document.getElementById("lastModified").textContent =
+        document.lastModified;
+    </script>
+  </body>
+</html>
