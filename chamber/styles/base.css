@@ -216,6 +216,8 @@ body {
     cursor: pointer;
   }
 
+
+
   /* Events Section Styles */
   .events {
     display: grid;
@@ -226,7 +228,7 @@ body {
 
   .event-card {
     background-color: #f1f1f1;
-    padding: 20px;
+ 
   }
 
   .event-card.large {
@@ -234,16 +236,41 @@ body {
   }
 
   /* Weather Section Styles */
+  .weather-card{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    border:1px solid #8b8a8a;
+ 
+  
+  }
+  .weather-card-text{
+    display: flex;
+    padding: 2px 5px;
+    align-items: center;
+    justify-content: start;
+    background-color: #333;
+    width: 100%;
+  }
+  .weather-card-text h2{
+    color: #fff;
+  }
   .weather {
     display: flex;
     justify-content: space-between;
     padding: 40px 20px;
   }
+.weather-card-textcard{
+  padding-top: 5px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
 
   .current-weather,
   .weather-forecast {
     background-color: #f1f1f1;
-    padding: 20px;
     flex-basis: 48%;
   }
 
