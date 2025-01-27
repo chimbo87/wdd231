@@ -275,19 +275,50 @@ body {
   }
 
   /* Business Cards Section Styles */
-  .business-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 40px 20px;
-  }
+  /* General Styles */
+.business-cards {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
 
-  .business-card {
-    background-color: #f1f1f1;
-    padding: 20px;
-  }
+.spotlight-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+  gap: 20px; /* Space between the cards */
+  width: 100%;
+  max-width: 1200px; /* Max width for container */
+}
+.spotlight-container img{
+width: 100%;
+height: auto;
+object-fit: contain;
+}
+.card {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
-  /* Responsive Styles */
+/* Media Queries for Responsiveness */
+
+/* Medium screens (Tablets) - 2 Cards */
+@media (max-width: 768px) {
+  .spotlight-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+
+/* Small screens (Mobile) - 1 Card */
+@media (max-width: 480px) {
+  .spotlight-container {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+}
+
+
   @media (max-width: 768px) {
     .events,
     .business-cards {
