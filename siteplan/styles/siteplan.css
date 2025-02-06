@@ -1,0 +1,122 @@
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #E74C3C;
+    --text-color: #333;
+    --background-color: #f5f5f5;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+}
+
+h1 {
+    text-align: center;
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 10px;
+}
+
+/* Sections */
+section {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Site Name Styles */
+.site-name-highlight {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+/* Scenarios */
+.scenario {
+    margin-bottom: 20px;
+}
+
+.scenario-title {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Color Schema */
+.color-definition {
+    margin-bottom: 20px;
+}
+
+.color-sample {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border: 1px solid #333;
+}
+
+.primary-color {
+    background-color: var(--primary-color);
+}
+
+.secondary-color {
+    background-color: var(--secondary-color);
+}
+
+/* Typography Section */
+.font-definition {
+    margin-bottom: 30px;
+}
+
+/* Wireframe */
+.wireframe {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.wireframe-box {
+    border: 2px solid var(--primary-color);
+    padding: 20px;
+    width: calc(50% - 40px);
+    min-width: 300px;
+    margin: 10px;
+}
+
+.wireframe-svg {
+    width: 100%;
+    height: auto;
+}
+
+/* Wireframe Elements */
+.header-element {
+    fill: var(--primary-color);
+}
+
+.content-element {
+    fill: #ddd;
+}
+
+.feature-element {
+    fill: #eee;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wireframe-box {
+        width: 100%;
+    }
+}
