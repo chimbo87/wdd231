@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Directory - Timbuktu Chamber of Commerce</title>
+    <meta
+      name="description"
+      content="Explore local businesses in Timbuktu. Find contact information, locations, and services offered by our chamber members."
+    />
+    <meta name="author" content="Archford Nhanga" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/facebook-logo.png" href="favicon.ico" />
+
+    <!-- Facebook Open Graph meta tags -->
+    <meta
+      property="og:title"
+      content="Timbuktu Chamber of Commerce Business Directory"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/facebook-logo.png" />
+    <meta
+      property="og:url"
+      content="https://chimbo87.github.io/wdd231/chamber/directory.html"
+    />
+    <link rel="stylesheet" href="styles/base.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <img src="images/team.png" alt="Timbuktu Chamber Logo" />
+          <h1>Timbuktu Chamber</h1>
+        </div>
+        <nav>
+          <button id="menu-button" aria-label="Menu">☰</button>
+          <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="discover.html" class="active">Discover</a></li>
+            <li><a href="join.html">Join</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="discover-grid">
+      <aside class="sidebar">
+        <div id="visit-message"></div>
+      </aside>
+
+      <section class="gallery">
+        <div class="card">
+          <h2>Item Name 1</h2>
+          <figure>
+            <img src="images/hotel.jpeg" alt="Item 1" loading="lazy" />
+          </figure>
+          <address>123 Main St, City, State</address>
+          <p>Description of the item goes here.</p>
+          <button>Learn More</button>
+        </div>
+
+        <div class="card">
+          <h2>Item Name 1</h2>
+          <figure>
+            <img src="images/hotel.jpeg" alt="Item 1" loading="lazy" />
+          </figure>
+          <address>123 Main St, City, State</address>
+          <p>Description of the item goes here.</p>
+          <button>Learn More</button>
+        </div>
+
+        <div class="card">
+          <h2>Item Name 1</h2>
+          <figure>
+            <img src="images/hotel.jpeg" alt="Item 1" loading="lazy" />
+          </figure>
+          <address>123 Main St, City, State</address>
+          <p>Description of the item goes here.</p>
+          <button>Learn More</button>
+        </div>
+
+        <div class="card">
+          <h2>Item Name 2</h2>
+          <figure>
+            <img src="images/cafe.jpeg" alt="Item 2" loading="lazy" />
+          </figure>
+          <address>456 Elm St, City, State</address>
+          <p>Description of the item goes here.</p>
+          <button>Learn More</button>
+        </div>
+
+        <div class="card">
+          <h2>Item Name 2</h2>
+          <figure>
+            <img src="images/cafe.jpeg" alt="Item 2" loading="lazy" />
+          </figure>
+          <address>456 Elm St, City, State</address>
+          <p>Description of the item goes here.</p>
+          <button>Learn More</button>
+        </div>
+
+        <div class="card">
+          <h2>Item Name 2</h2>
+          <figure>
+            <img src="images/cafe.jpeg" alt="Item 2" loading="lazy" />
+          </figure>
+          <address>456 Elm St, City, State</address>
+          <p>Description of the item goes here.</p>
+          <button>Learn More</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+          <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p>10 Rue De La Paix</p>
+            <p>Timbuktu, Mali 999</p>
+            <p>info@timbuktuchamber.org</p>
+            <p>(223) 555-2300</p>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="YouTube"
+              ><img src="images/youtube.png" alt="YouTube"
+            /></a>
+            <a href="#" aria-label="Twitter"
+              ><img src="images/twitter.png" alt="Twitter"
+            /></a>
+            <a href="#" aria-label="LinkedIn"
+              ><img src="images/linkedin.png" alt="LinkedIn"
+            /></a>
+          </div>
+        </div>
+        <div class="footer-base">
+          <p>
+            &copy; <span id="currentYear"></span> Timbuktu Chamber | Archford
+            Nhanga | WDD 231
+          </p>
+          <p>Last Modified: <span id="lastModified"></span></p>
+        </div>
+      </footer>
+
+    <script src="scripts/discover.js"></script>
+  </body>
+</html>
