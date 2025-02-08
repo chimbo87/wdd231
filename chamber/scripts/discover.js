@@ -25,9 +25,78 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   
+    // Load JSON data and generate cards
+    const jsonData = [
+      {
+        "title": "Desert Oasis Hotel",
+        "image": "images/hotel.jpeg",
+        "address": "123 Main St, City, State",
+        "description": "Luxury accommodation in the heart of Timbuktu"
+      },
+      {
+        "title": "Sahara Trading Co.",
+        "image": "images/imports.jpeg",
+        "address": "456 Elm St, City, State",
+        "description": "Import/Export specialists for local artisan goods"
+      },
+      {
+        "title": "Timbuktu Tours",
+        "image": "images/tours.jpeg",
+        "address": "456 Elm St, City, State",
+        "description": "Expert guided tours of historical sites"
+      },
+      {
+        "title": "Desert Rose Café",
+        "image": "images/cafe.jpeg",
+        "address": "456 Elm St, City, State",
+        "description": "Traditional Malian cuisine and coffee"
+      },
+      {
+        "title": "Manuscripts & More",
+        "image": "images/manuscripts.jpeg",
+        "address": "456 Elm St, City, State",
+        "description": "Historical manuscript preservation and tours"
+      },
+      {
+        "title": "Sahel Solar Solutions",
+        "image": "images/solars.jpeg",
+        "address": "456 Elm St, City, State",
+        "description": "Renewable energy solutions for businesses"
+      },
+      {
+        "title": "Timbuktu Textiles",
+        "image": "images/textiles.jpeg",
+        "address": "456 Elm St, City, State",
+        "description": "Traditional Mali fabrics and modern designs"
+      },
+      {
+        "title": "Desert Rose Café",
+        "image": "images/cafe.jpeg",
+        "address": "456 Elm St, City, State",
+        "description": "Traditional Malian cuisine and coffee"
+      },
+    ];
+  
+    const gallery = document.querySelector('.gallery');
+    if (gallery) {
+      jsonData.forEach(item => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.innerHTML = `
+          <h2>${item.title}</h2>
+          <figure>
+            <img src="${item.image}" alt="${item.title}" loading="lazy">
+          </figure>
+          <address>${item.address}</address>
+          <p>${item.description}</p>
+          <button>Learn More</button>
+        `;
+        gallery.appendChild(card);
+      });
+    }
+  
     // Last visit message logic
     const visitMessage = document.getElementById('visit-message');
-  
     if (visitMessage) {
       let lastVisit = localStorage.getItem('lastVisit');
       const currentDate = Date.now();
@@ -49,6 +118,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     // Update copyright year and last modified date
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-    document.getElementById('lastModified').textContent = document.lastModified;
+    const currentYear = document.getElementById('currentYear');
+    const lastModified = document.getElementById('lastModified');
+  
+    if (currentYear) {
+      currentYear.textContent = new Date().getFullYear();
+    }
+  
+    if (lastModified) {
+      lastModified.textContent = document.lastModified;
+    }
   });
