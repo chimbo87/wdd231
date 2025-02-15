@@ -1,0 +1,28 @@
+{
+    "destinations": [
+      {
+        "id": 1,
+        "name": "Amazon Rainforest",
+        "image": "images/baobob.jpeg",
+        "description": "Explore the world's largest rainforest.",
+        "location": "Brazil",
+        "rating": 4.8
+      },
+      {
+        "id": 2,
+        "name": "Great Barrier Reef",
+        "image": "images/baobob.jpeg",
+        "description": "Discover the world's largest coral reef system.",
+        "location": "Australia",
+        "rating": 4.7
+      },
+      {
+        "id": 3,
+        "name": "Svalbard",
+        "image": "images/baobob.jpeg",
+        "description": "Experience the Arctic wilderness.",
+        "location": "Norway",
+        "rating": 4.9
+      }
+    ]
+  }

@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover eco-friendly destinations around the world. Find sustainable accommodations and responsible tour operators for your next trip.">
+    <title>Eco Destinations - EcoTravel Hub</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Eco Destinations - EcoTravel Hub">
+    <meta property="og:description" content="Discover eco-friendly destinations around the world. Find sustainable accommodations and responsible tour operators.">
+    <meta property="og:image" content="images/ecotravel-social.jpg">
+    <meta property="og:url" content="https://yourusername.github.io/wdd231/ecotravel-hub/destinations.html">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/travel.png" alt="EcoTravel Hub Logo" class="logo">
+            <h1>EcoTravel Hub</h1>
+        </div>
+        <nav>
+            <button id="hamburgerBtn"><span>&#9776;</span><span>X</span></button>
+            <ul id="primaryNav">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="destinations.html">Eco Destinations</a></li>
+                <li><a href="calculator.html">Carbon Calculator</a></li>
+                <li><a href="#" id="contactBtn">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="page-header">
+            <h2>Eco-Friendly Destinations</h2>
+            <p>Discover sustainable travel locations that prioritize environmental conservation and community well-being</p>
+        </section>
+        
+        <section class="filter-section">
+            <h3>Filter Destinations</h3>
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="region-filter">Region:</label>
+                    <select id="region-filter">
+                        <option value="all">All Regions</option>
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="activity-filter">Activity Type:</label>
+                    <select id="activity-filter">
+                        <option value="all">All Activities</option>
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+                <button id="reset-filters" class="secondary-button">Reset Filters</button>
+            </div>
+        </section>
+        
+        <section class="all-destinations">
+            <div id="all-destinations-container" class="destinations-grid">
+                <!-- Destinations will be loaded dynamically via JavaScript -->
+                <div class="loading">Loading destinations...</div>
+            </div>
+        </section>
+        
+        <section class="destination-spotlight">
+            <h3>Destination of the Month</h3>
+            <div id="spotlight-container" class="spotlight-content">
+                <!-- Spotlight content will be loaded dynamically -->
+                <div class="loading">Loading spotlight...</div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/ecotravel-logo-white.png" alt="EcoTravel Hub Logo" class="logo-small">
+                <p>Your gateway to sustainable travel</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Eco Destinations</a></li>
+                    <li><a href="calculator.html">Carbon Calculator</a></li>
+                    <li><a href="attributions.html">Attributions</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EcoTravel Hub. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Destination Detail Modal -->
+    <div id="destinationModal" class="modal">
+        <div class="modal-content destination-modal-content">
+            <span class="close-button">&times;</span>
+            <div id="destinations-container" class="destinations-grid">
+                <!-- Destinations will be loaded dynamically via JavaScript -->
+                <div class="loading">Loading destinations...</div>
+              </div>
+        </div>
+    </div>
+    
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email:</label>
+                    <input type="email" id="contact-email" name="contact-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- JavaScript Files -->
+    <script>
+        // ======================
+// Load and Display Destinations
+// ======================
+async function loadDestinations() {
+  const destinationsContainer = document.getElementById('all-destinations-container');
+
+  try {
+    const response = await fetch('./data/destinations.json');
+    if (!response.ok) {
+      throw new Error('Failed to fetch destinations data');
+    }
+
+    const data = await response.json();
+    displayDestinations(data.destinations);
+    populateFilters(data.destinations);
+  } catch (error) {
+    console.error('Error loading destinations:', error);
+    destinationsContainer.innerHTML = `
+      <p class="error-message">Sorry, we couldn't load the destinations at this time. Please try again later.</p>
+    `;
+  }
+}
+
+function displayDestinations(destinations) {
+  const destinationsContainer = document.getElementById('all-destinations-container');
+
+  if (destinations.length === 0) {
+    destinationsContainer.innerHTML = '<p>No destinations found.</p>';
+    return;
+  }
+
+  let html = '';
+  destinations.forEach(destination => {
+    html += `
+      <div class="destination-card">
+        <img src="${destination.image}" alt="${destination.name}" loading="lazy">
+        <div class="destination-info">
+          <h3>${destination.name}</h3>
+          <p class="location"><i class="fas fa-map-marker-alt"></i> ${destination.location}</p>
+          <p class="rating">
+            <span class="rating-stars">
+              ${getStarRating(destination.rating)}
+            </span>
+            Rating: ${destination.rating}/5
+          </p>
+          <p class="description">${destination.description}</p>
+          <button class="view-details-btn" data-id="${destination.id}">View Details</button>
+        </div>
+      </div>
+    `;
+  });
+
+  destinationsContainer.innerHTML = html;
+
+  // Add event listeners to "View Details" buttons
+  const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
+  viewDetailsBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-id');
+      const destination = destinations.find(d => d.id.toString() === id);
+      if (destination) {
+        showDestinationModal(destination);
+      }
+    });
+  });
+}
+
+// ======================
+// Filter Functionality
+// ======================
+function populateFilters(destinations) {
+  const regionFilter = document.getElementById('region-filter');
+  const activityFilter = document.getElementById('activity-filter');
+
+  const regions = [...new Set(destinations.map(d => d.region))];
+  const activities = [...new Set(destinations.map(d => d.activity))];
+
+  regions.forEach(region => {
+    const option = document.createElement('option');
+    option.value = region;
+    option.textContent = region;
+    regionFilter.appendChild(option);
+  });
+
+  activities.forEach(activity => {
+    const option = document.createElement('option');
+    option.value = activity;
+    option.textContent = activity;
+    activityFilter.appendChild(option);
+  });
+
+  // Add event listeners to filters
+  regionFilter.addEventListener('change', filterDestinations);
+  activityFilter.addEventListener('change', filterDestinations);
+  document.getElementById('reset-filters').addEventListener('click', resetFilters);
+}
+
+function filterDestinations() {
+  const regionFilter = document.getElementById('region-filter').value;
+  const activityFilter = document.getElementById('activity-filter').value;
+
+  fetch('./data/destinations.json')
+    .then(response => response.json())
+    .then(data => {
+      let filteredDestinations = data.destinations;
+
+      if (regionFilter !== 'all') {
+        filteredDestinations = filteredDestinations.filter(d => d.region === regionFilter);
+      }
+
+      if (activityFilter !== 'all') {
+        filteredDestinations = filteredDestinations.filter(d => d.activity === activityFilter);
+      }
+
+      displayDestinations(filteredDestinations);
+    });
+}
+
+function resetFilters() {
+  document.getElementById('region-filter').value = 'all';
+  document.getElementById('activity-filter').value = 'all';
+  filterDestinations();
+}
+
+// ======================
+// Modal Functionality
+// ======================
+function showDestinationModal(destination) {
+  const modal = document.getElementById('destinationModal');
+  const modalContent = modal.querySelector('.destination-modal-content');
+
+  modalContent.innerHTML = `
+    <span class="close-button">&times;</span>
+    <h2>${destination.name}</h2>
+    <img src="${destination.image}" alt="${destination.name}">
+    <p><strong>Location:</strong> ${destination.location}</p>
+    <p><strong>Region:</strong> ${destination.region}</p>
+    <p><strong>Activity:</strong> ${destination.activity}</p>
+    <p><strong>Rating:</strong> ${destination.rating}/5</p>
+    <p><strong>Description:</strong> ${destination.description}</p>
+  `;
+
+  modal.style.display = 'block';
+
+  // Close modal when clicking the close button or outside the modal
+  modal.querySelector('.close-button').addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+}
+
+// ======================
+// Shared Functions
+// ======================
+function getStarRating(rating) {
+  const fullStars = Math.floor(rating);
+  const halfStar = rating % 1 >= 0.5;
+  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+  let stars = '';
+  for (let i = 0; i < fullStars; i++) {
+    stars += '<i class="fas fa-star"></i>';
+  }
+  if (halfStar) {
+    stars += '<i class="fas fa-star-half-alt"></i>';
+  }
+  for (let i = 0; i < emptyStars; i++) {
+    stars += '<i class="far fa-star"></i>';
+  }
+
+  return stars;
+}
+
+// ======================
+// Initialize Everything
+// ======================
+document.addEventListener('DOMContentLoaded', () => {
+  loadDestinations();
+});
+    </script>
+
+</body>
+</html>

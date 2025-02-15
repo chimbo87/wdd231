@@ -1,0 +1,52 @@
+{
+    "accommodations": [
+      {
+        "id": 1,
+        "name": "Green Leaf Eco Resort",
+        "location": "Bali, Indonesia",
+        "rating": 4.8,
+        "price": 120,
+        "image": "images/accommodations/green-leaf-resort.jpg",
+        "description": "Nestled in the lush rice terraces of Bali, Green Leaf Eco Resort offers luxury accommodations with minimal environmental impact. The resort is built entirely from sustainable bamboo and reclaimed materials.",
+        "ecoFeatures": [
+          "Solar powered electricity",
+          "Rainwater harvesting system",
+          "Organic on-site garden",
+          "Zero waste policy",
+          "Locally sourced materials"
+        ],
+        "amenities": [
+          "Infinity pool",
+          "Organic restaurant",
+          "Yoga deck",
+          "Free bicycles",
+          "Nature trails"
+        ],
+        "bookingLink": "https://example.com/green-leaf-booking"
+      },
+      {
+        "id": 2,
+        "name": "Oceanview Eco Lodge",
+        "location": "Costa Rica",
+        "rating": 4.6,
+        "price": 95,
+        "image": "images/accommodations/oceanview-lodge.jpg",
+        "description": "Perched on a hill overlooking the Pacific Ocean, this eco-lodge combines sustainable living with breathtaking views. The property runs entirely on renewable energy and supports local conservation efforts.",
+        "ecoFeatures": [
+          "100% renewable energy",
+          "Composting toilets",
+          "Biodegradable toiletries",
+          "Farm-to-table dining",
+          "Wildlife conservation program"
+        ],
+        "amenities": [
+          "Private beach access",
+          "Outdoor showers",
+          "Hammock garden",
+          "Guided nature tours",
+          "Community dinners"
+        ],
+        "bookingLink": "https://example.com/oceanview-booking"
+      }
+    ]
+  }

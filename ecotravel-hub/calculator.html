@@ -1,0 +1,578 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate and offset your travel carbon footprint. Compare environmental impact of different transportation options for your trip.">
+    <title>Carbon Calculator - EcoTravel Hub</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Carbon Calculator - EcoTravel Hub">
+    <meta property="og:description" content="Calculate and offset your travel carbon footprint. Compare environmental impact of different transportation options.">
+    <meta property="og:image" content="images/ecotravel-social.jpg">
+    <meta property="og:url" content="https://yourusername.github.io/wdd231/ecotravel-hub/calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/travel.png" alt="EcoTravel Hub Logo" class="logo">
+            <h1>EcoTravel Hub</h1>
+        </div>
+        <nav>
+            <button id="hamburgerBtn"><span>&#9776;</span><span>X</span></button>
+            <ul id="primaryNav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Eco Destinations</a></li>
+                <li class="active"><a href="calculator.html">Carbon Calculator</a></li>
+                <li><a href="#" id="contactBtn">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="page-header">
+            <h2>Travel Carbon Footprint Calculator</h2>
+            <p>Measure and compare the environmental impact of different transportation options for your trip</p>
+        </section>
+        
+        <section class="calculator-section">
+            <div class="calculator-container">
+                <form id="carbon-calculator-form">
+                    <div class="form-group">
+                        <label for="origin">Origin (City):</label>
+                        <input type="text" id="origin" name="origin" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="destination">Destination (City):</label>
+                        <input type="text" id="destination" name="destination" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="distance">Distance (km):</label>
+                        <input type="number" id="distance" name="distance" min="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Transportation Type:</label>
+                        <div class="radio-group">
+                            <input type="radio" id="plane" name="transport-type" value="plane" checked>
+                            <label for="plane">Plane</label>
+                            
+                            <input type="radio" id="car" name="transport-type" value="car">
+                            <label for="car">Car</label>
+                            
+                            <input type="radio" id="train" name="transport-type" value="train">
+                            <label for="train">Train</label>
+                            
+                            <input type="radio" id="bus" name="transport-type" value="bus">
+                            <label for="bus">Bus</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" id="car-options" style="display: none;">
+                        <label for="car-type">Car Type:</label>
+                        <select id="car-type" name="car-type">
+                            <option value="small">Small (e.g., Compact)</option>
+                            <option value="medium">Medium (e.g., Sedan)</option>
+                            <option value="large">Large (e.g., SUV)</option>
+                            <option value="electric">Electric</option>
+                            <option value="hybrid">Hybrid</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="passengers">Number of Passengers:</label>
+                        <input type="number" id="passengers" name="passengers" min="1" value="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="round-trip">Round Trip?</label>
+                        <input type="checkbox" id="round-trip" name="round-trip">
+                    </div>
+                    
+                    <button type="submit" class="cta-button">Calculate Footprint</button>
+                </form>
+            </div>
+            
+            <div id="results-container" class="results-container" style="display: none;">
+                <h3>Your Carbon Footprint Results</h3>
+                <div id="results-content" class="results-content"></div>
+                
+                <div class="comparison-section">
+                    <h4>Compare Transportation Options</h4>
+                    <div id="comparison-chart" class="comparison-chart"></div>
+                </div>
+                
+                <div class="offset-section">
+                    <h4>Offset Your Carbon Footprint</h4>
+                    <p>Help neutralize your travel emissions by supporting verified carbon offset projects:</p>
+                    <div id="offset-options" class="offset-options"></div>
+                </div>
+                
+                <button id="save-results" class="secondary-button">Save Results</button>
+                <button id="reset-calculator" class="secondary-button">Calculate Another Trip</button>
+            </div>
+        </section>
+        
+        <section class="tips-section">
+            <h3>Tips for Reducing Your Travel Footprint</h3>
+            <div class="tips-container">
+                <div class="tip-card">
+                    <i class="fas fa-plane-slash tip-icon"></i>
+                    <h4>Choose Ground Transportation</h4>
+                    <p>When possible, opt for trains or buses over flights for shorter distances. They typically produce significantly fewer emissions per passenger.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-users tip-icon"></i>
+                    <h4>Travel With More People</h4>
+                    <p>The more passengers sharing a vehicle, the lower the per-person carbon footprint. Consider carpooling or sharing transport.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-leaf tip-icon"></i>
+                    <h4>Support Carbon Offset Projects</h4>
+                    <p>Invest in verified projects that reduce greenhouse gas emissions to compensate for your unavoidable travel emissions.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="saved-trips-section">
+            <h3>Your Saved Trips</h3>
+            <div id="saved-trips-container" class="saved-trips-container">
+                <p id="no-saved-trips" class="no-data-message">You haven't saved any trips yet. Calculate and save a trip to see it here.</p>
+                <div id="saved-trips-list" class="saved-trips-list" style="display: none;"></div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/ecotravel-logo-white.png" alt="EcoTravel Hub Logo" class="logo-small">
+                <p>Your gateway to sustainable travel</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Eco Destinations</a></li>
+                    <li><a href="calculator.html">Carbon Calculator</a></li>
+                    <li><a href="attributions.html">Attributions</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EcoTravel Hub. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email:</label>
+                    <input type="email" id="contact-email" name="contact-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- JavaScript Files -->
+    <script >
+        // Carbon Calculator Functionality
+function setupCalculator() {
+    const calculatorForm = document.getElementById('carbon-calculator-form');
+    const resultsContainer = document.getElementById('results-container');
+    const resultsContent = document.getElementById('results-content');
+    const comparisonChart = document.getElementById('comparison-chart');
+    const offsetOptions = document.getElementById('offset-options');
+    const saveResultsBtn = document.getElementById('save-results');
+    const resetCalculatorBtn = document.getElementById('reset-calculator');
+    const savedTripsContainer = document.getElementById('saved-trips-container');
+    const savedTripsList = document.getElementById('saved-trips-list');
+    const noSavedTripsMsg = document.getElementById('no-saved-trips');
+    
+    // Show car options when car is selected
+    const transportTypes = document.querySelectorAll('input[name="transport-type"]');
+    const carOptions = document.getElementById('car-options');
+    
+    transportTypes.forEach(radio => {
+        radio.addEventListener('change', () => {
+            if (radio.value === 'car') {
+                carOptions.style.display = 'block';
+            } else {
+                carOptions.style.display = 'none';
+            }
+        });
+    });
+
+    if (calculatorForm) {
+        calculatorForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const origin = document.getElementById('origin').value;
+            const destination = document.getElementById('destination').value;
+            const distance = parseFloat(document.getElementById('distance').value);
+            const transportType = document.querySelector('input[name="transport-type"]:checked').value;
+            const carType = document.getElementById('car-type').value;
+            const passengers = parseInt(document.getElementById('passengers').value) || 1;
+            const isRoundTrip = document.getElementById('round-trip').checked;
+            
+            // Calculate total distance
+            const totalDistance = isRoundTrip ? distance * 2 : distance;
+            
+            // Calculate carbon footprint
+            const carbonFootprint = calculateCarbonFootprint(transportType, carType, totalDistance, passengers);
+            
+            // Display results
+            displayResults(origin, destination, transportType, carType, totalDistance, passengers, carbonFootprint, isRoundTrip);
+            
+            // Compare with other transport options
+            displayComparisonChart(totalDistance, passengers, transportType);
+            
+            // Show offset options
+            displayOffsetOptions(carbonFootprint);
+            
+            // Show results container
+            resultsContainer.style.display = 'block';
+            
+            // Scroll to results
+            resultsContainer.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+    
+    if (saveResultsBtn) {
+        saveResultsBtn.addEventListener('click', function() {
+            saveCurrentCalculation();
+        });
+    }
+    
+    if (resetCalculatorBtn) {
+        resetCalculatorBtn.addEventListener('click', function() {
+            calculatorForm.reset();
+            resultsContainer.style.display = 'none';
+            carOptions.style.display = 'none';
+        });
+    }
+    
+    // Load saved trips on page load
+    loadSavedTrips();
+}
+
+function calculateCarbonFootprint(transportType, carType, distance, passengers) {
+    // Carbon emission factors in kg CO2 per passenger-kilometer
+    const carbonFactors = {
+        'plane': 0.255,
+        'car': {
+            'small': 0.171,
+            'medium': 0.192,
+            'large': 0.297,
+            'electric': 0.053,
+            'hybrid': 0.113
+        },
+        'train': 0.041,
+        'bus': 0.104
+    };
+    
+    let totalEmission = 0;
+    
+    if (transportType === 'car') {
+        totalEmission = carbonFactors.car[carType] * distance;
+        // Divide by number of passengers for cars
+        totalEmission = totalEmission / passengers;
+    } else {
+        totalEmission = carbonFactors[transportType] * distance;
+    }
+    
+    return totalEmission.toFixed(2);
+}
+
+function displayResults(origin, destination, transportType, carType, distance, passengers, carbonFootprint, isRoundTrip) {
+    const resultsContent = document.getElementById('results-content');
+    
+    let transportTypeDisplay = transportType;
+    if (transportType === 'car') {
+        transportTypeDisplay = `${carType} car`;
+    }
+    
+    const tripTypeText = isRoundTrip ? 'round trip' : 'one way';
+    
+    resultsContent.innerHTML = `
+        <div class="result-summary">
+            <p><strong>Trip:</strong> ${origin} to ${destination} (${tripTypeText})</p>
+            <p><strong>Distance:</strong> ${distance} km</p>
+            <p><strong>Transport:</strong> ${transportTypeDisplay} with ${passengers} passenger(s)</p>
+            <p class="carbon-result"><strong>Carbon Footprint:</strong> ${carbonFootprint} kg CO₂</p>
+        </div>
+        <div class="result-context">
+            <h4>What does this mean?</h4>
+            <p>Your trip will generate approximately <strong>${carbonFootprint} kg</strong> of CO₂ emissions. For perspective:</p>
+            <ul>
+                <li>This is equivalent to the CO₂ absorbed by ${Math.ceil(carbonFootprint / 22)} trees in one year</li>
+                <li>The average person emits about 5,000 kg of CO₂ per year</li>
+                <li>A single mature tree absorbs about 22 kg of CO₂ per year</li>
+            </ul>
+        </div>
+    `;
+}
+
+function displayComparisonChart(distance, passengers, currentTransport) {
+    const comparisonChart = document.getElementById('comparison-chart');
+    
+    // Calculate footprint for all transport types
+    const transportTypes = ['plane', 'car', 'train', 'bus'];
+    const results = {};
+    
+    transportTypes.forEach(type => {
+        if (type === 'car') {
+            results[type] = calculateCarbonFootprint(type, 'medium', distance, passengers);
+        } else {
+            results[type] = calculateCarbonFootprint(type, null, distance, passengers);
+        }
+    });
+    
+    // Create the chart HTML
+    let chartHTML = `
+        <div class="chart-container">
+    `;
+    
+    transportTypes.forEach(type => {
+        const isSelected = (type === currentTransport);
+        const barHeight = Math.min(parseInt(results[type]) * 0.5, 300); // Scale the bar height
+        
+        chartHTML += `
+            <div class="chart-bar ${isSelected ? 'selected' : ''}">
+                <div class="bar-label">${results[type]} kg</div>
+                <div class="bar" style="height: ${barHeight}px;"></div>
+                <div class="bar-name">${type.charAt(0).toUpperCase() + type.slice(1)}</div>
+            </div>
+        `;
+    });
+    
+    chartHTML += `
+        </div>
+        <p class="chart-note">The selected option is highlighted. Lower bars mean less environmental impact.</p>
+    `;
+    
+    comparisonChart.innerHTML = chartHTML;
+}
+
+function displayOffsetOptions(carbonFootprint) {
+    const offsetOptions = document.getElementById('offset-options');
+    
+    // Calculate offset amounts
+    const treeCost = 20; // Cost per tree in $
+    const treesNeeded = Math.ceil(carbonFootprint / 22);
+    const treesTotal = treeCost * treesNeeded;
+    
+    const renewableCost = 15; // Cost per 100 kg in $
+    const renewableTotal = (carbonFootprint / 100) * renewableCost;
+    
+    offsetOptions.innerHTML = `
+        <div class="offset-cards">
+            <div class="offset-card">
+                <i class="fas fa-tree offset-icon"></i>
+                <h5>Plant Trees</h5>
+                <p>Plant ${treesNeeded} trees to offset your emissions over the next year.</p>
+                <p class="offset-cost">$${treesTotal.toFixed(2)}</p>
+                <button class="offset-button" data-option="trees" data-amount="${treesTotal.toFixed(2)}">Select</button>
+            </div>
+            
+            <div class="offset-card">
+                <i class="fas fa-solar-panel offset-icon"></i>
+                <h5>Renewable Energy</h5>
+                <p>Invest in renewable energy projects to offset your emissions.</p>
+                <p class="offset-cost">$${renewableTotal.toFixed(2)}</p>
+                <button class="offset-button" data-option="renewable" data-amount="${renewableTotal.toFixed(2)}">Select</button>
+            </div>
+            
+            <div class="offset-card">
+                <i class="fas fa-hand-holding-heart offset-icon"></i>
+                <h5>Community Projects</h5>
+                <p>Support local sustainability initiatives and carbon reduction projects.</p>
+                <p class="offset-cost">$${(carbonFootprint * 0.25).toFixed(2)}</p>
+                <button class="offset-button" data-option="community" data-amount="${(carbonFootprint * 0.25).toFixed(2)}">Select</button>
+            </div>
+        </div>
+        <p class="offset-disclaimer">These are estimated costs. Click 'Select' to learn more about specific projects.</p>
+    `;
+    
+    // Add event listeners to offset buttons
+    const offsetButtons = document.querySelectorAll('.offset-button');
+    offsetButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const option = button.getAttribute('data-option');
+            const amount = button.getAttribute('data-amount');
+            alert(`Thank you for your interest in offsetting with ${option}! This would redirect to a payment page for $${amount}.`);
+        });
+    });
+}
+
+function saveCurrentCalculation() {
+    const origin = document.getElementById('origin').value;
+    const destination = document.getElementById('destination').value;
+    const distance = parseFloat(document.getElementById('distance').value);
+    const transportType = document.querySelector('input[name="transport-type"]:checked').value;
+    const carType = document.getElementById('car-type').value;
+    const passengers = parseInt(document.getElementById('passengers').value) || 1;
+    const isRoundTrip = document.getElementById('round-trip').checked;
+    
+    // Calculate total distance and carbon footprint
+    const totalDistance = isRoundTrip ? distance * 2 : distance;
+    const carbonFootprint = calculateCarbonFootprint(transportType, carType, totalDistance, passengers);
+    
+    // Create calculation object
+    const calculation = {
+        id: Date.now(),
+        date: new Date().toISOString(),
+        origin: origin,
+        destination: destination,
+        distance: totalDistance,
+        transportType: transportType,
+        carType: transportType === 'car' ? carType : null,
+        passengers: passengers,
+        isRoundTrip: isRoundTrip,
+        carbonFootprint: carbonFootprint
+    };
+    
+    // Get existing saved calculations or initialize empty array
+    let savedCalculations = JSON.parse(localStorage.getItem('carbonCalculations')) || [];
+    
+    // Add new calculation
+    savedCalculations.push(calculation);
+    
+    // Save to localStorage
+    localStorage.setItem('carbonCalculations', JSON.stringify(savedCalculations));
+    
+    // Update the saved trips display
+    loadSavedTrips();
+    
+    // Show confirmation
+    alert('Your trip calculation has been saved!');
+}
+
+function loadSavedTrips() {
+    const savedTripsList = document.getElementById('saved-trips-list');
+    const noSavedTripsMsg = document.getElementById('no-saved-trips');
+    
+    // Get saved calculations from localStorage
+    const savedCalculations = JSON.parse(localStorage.getItem('carbonCalculations')) || [];
+    
+    if (savedCalculations.length === 0) {
+        noSavedTripsMsg.style.display = 'block';
+        savedTripsList.style.display = 'none';
+        return;
+    }
+    
+    // Show saved trips list and hide "no trips" message
+    noSavedTripsMsg.style.display = 'none';
+    savedTripsList.style.display = 'block';
+    
+    // Generate HTML for saved trips
+    let tripsHTML = '';
+    
+    // Sort calculations by date (newest first)
+    savedCalculations.sort((a, b) => new Date(b.date) - new Date(a.date));
+    
+    savedCalculations.forEach(calc => {
+        const date = new Date(calc.date).toLocaleDateString();
+        
+        let transportDisplay = calc.transportType;
+        if (calc.transportType === 'car' && calc.carType) {
+            transportDisplay = `${calc.carType} car`;
+        }
+        
+        const tripType = calc.isRoundTrip ? 'round trip' : 'one way';
+        
+        tripsHTML += `
+            <div class="saved-trip-card">
+                <div class="trip-header">
+                    <h4>${calc.origin} to ${calc.destination}</h4>
+                    <span class="trip-date">${date}</span>
+                </div>
+                <div class="trip-details">
+                    <p><strong>Distance:</strong> ${calc.distance} km (${tripType})</p>
+                    <p><strong>Transport:</strong> ${transportDisplay} with ${calc.passengers} passenger(s)</p>
+                    <p><strong>Carbon Footprint:</strong> ${calc.carbonFootprint} kg CO₂</p>
+                </div>
+                <button class="delete-trip-btn" data-id="${calc.id}">
+                    <i class="fas fa-trash-alt"></i> Delete
+                </button>
+            </div>
+        `;
+    });
+    
+    savedTripsList.innerHTML = tripsHTML;
+    
+    // Add event listeners to delete buttons
+    const deleteButtons = document.querySelectorAll('.delete-trip-btn');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tripId = parseInt(button.getAttribute('data-id'));
+            deleteSavedTrip(tripId);
+        });
+    });
+}
+
+function deleteSavedTrip(tripId) {
+    // Get saved calculations
+    let savedCalculations = JSON.parse(localStorage.getItem('carbonCalculations')) || [];
+    
+    // Filter out the trip to delete
+    savedCalculations = savedCalculations.filter(calc => calc.id !== tripId);
+    
+    // Save updated list to localStorage
+    localStorage.setItem('carbonCalculations', JSON.stringify(savedCalculations));
+    
+    // Reload the saved trips display
+    loadSavedTrips();
+}
+
+// Add this function to the existing main.js or your initialization code
+document.addEventListener('DOMContentLoaded', () => {
+    setupCalculator();
+});
+    </script>
+
+</body>
+</html>
